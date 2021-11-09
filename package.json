@@ -4,17 +4,29 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start:dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "html-template-tag": "^4.0.0",
     "lodash": "^4.17.21",
     "mongoose": "^6.0.12",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.14"
-  }
+    "nodemon": "^2.0.14",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caitlincampmorrison/Dealers_Choice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caitlincampmorrison/Dealers_Choice/issues"
+  },
+  "homepage": "https://github.com/caitlincampmorrison/Dealers_Choice#readme",
+  "keywords": [],
+  "description": ""
 }
