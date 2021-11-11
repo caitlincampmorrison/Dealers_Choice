@@ -4,21 +4,7 @@ const html = require("html-template-tag");
 module.exports = posts => `<!DOCTYPE html>
     <html>
         <head>
-            <style>
-            @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
-                nav{
-                    font-family: 'Noto Serif', serif;
-                    display: flex;
-                    justify-content: space-between;
-                    margin-bottom: 60px;
-                    padding-bottom: 10px;
-                    border-bottom: 1px solid #ddd;
-                }
-                a {
-                    font-family: 'Noto Serif', serif;
-                    text-decoration: none;
-                }
-            </style>
+            <link rel="stylesheet" href="/style.css" />
         </head>
         <body>
         <h1> To Do </h1>
@@ -29,6 +15,18 @@ module.exports = posts => `<!DOCTYPE html>
             </li>  
         `).join('')}
         </div>
+        <div class = "add-chore">
+            <header>Add Post</header>
+            <form method = "post" action= "/posts">
+                <label for= "title">Title:</label>
+                <input type="text" name = "title"/>
+                <label for= "content">Content:</label>
+                <input type="text" name="content"/>
+                <label for="time">Time:</label>
+                <input type="text" name="time"/>
+                <textarea name="content"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
         </body>
-    </html>
-   `
+    </html>`;

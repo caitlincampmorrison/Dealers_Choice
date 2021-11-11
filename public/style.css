@@ -1,0 +1,61 @@
+.submit-button {
+    color: black;
+    padding-top: 10px;
+}
+* {
+    box-sizing: border-box;
+    color: black;
+}
+body {
+    margin: 0;
+    height: 100%;
+    font-family: sans-serif;
+    align-items: center;
+}
+nav{
+    font-family: 'Noto Serif', serif;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+a {
+    font-family: 'Noto Serif', serif;
+    text-decoration: none;
+}
+.home-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border: 2px solid;
+    float: right;
+    padding: 10px;
+    top: 0px;
+    text-decoration: none;
+    color: black;
+    background-color: lightgray;
+    font-family: 'Noto Serif', serif;
+}
+.chore-list{
+    font-family: 'Noto Serif', serif;
+    text-decoration: none;
+    padding-bottom: 20px;
+}
+body {
+    background-image: url('water.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+.new-chore {
+    display: flex;
+    padding-bottom: 10px;
+}
+.new-chore > label {
+    float: left;
+}
+.new-chore > input {
+    float: left;
+}

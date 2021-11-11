@@ -2,10 +2,18 @@ const express = require("express");
 const app = express();
 const list = require("./views/list");
 const details = require("./views/details");
+const addPost = require("./views/addPost");
 const path = require('path');
 const pg = require('pg')
 const db = require('./db');
 const client = db.client;
+
+// parses url-encoded bodies
+app.use(express.urlencoded({ extended: false }));
+// parses json bodies
+app.use(express.json())
+app.use(express.static(__dirname + '/public'));
+
 
 app.get("/", async(req, res, next) => {
     try {
@@ -16,6 +24,23 @@ app.get("/", async(req, res, next) => {
     }
     catch(ex) { next(ex); }
    
+})
+
+app.post('/', async(req, res, next) => {
+    try{
+        const data = await client.query(`
+            INSERT INTO tasks(title) VALUES($1) RETURNING *;
+        `, [req.body.name]);
+    }
+    catch(error){
+        next(error)
+    }
+})
+app.get("/add", (req, re, next)=> { 
+    try {
+        res.send(list(addPost))
+    }
+    catch(ex) { next(ex); }
 })
 
 app.get('/posts/:id', async(req, res, next) => {
